@@ -18,6 +18,9 @@ class TruckTests
         _engine!.Setup(eng => eng.GetPower()).Returns("");
         var result = _truck!.Start();
 
+        // Verify that a method was called
+        _engine.Verify(e => e.GetPower());
+
         Assert.That(result, Does.Contain("error").IgnoreCase);
     }
 }
