@@ -50,5 +50,16 @@ public class MathTests
 
         // Assert.That(result, Is.EquivalentTo(new List<int>()));
     }
+
+    [Test]
+    [TestCase (15, "FizzBuzz")]
+    [TestCase (3, "Fizz")]
+    [TestCase (5, "Buzz")]
+    [TestCase (1, "1")]
+    public void FizzBuzz_WhenCalled_ReturnsAccordingToFizzBuzzProgram(int num, string expectedResult){
+        var result = _math!.FizzBuzz(num);
+
+        Assert.That(result, Is.EqualTo(expectedResult));
+    }
     
 }
